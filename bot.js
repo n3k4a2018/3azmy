@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
+const client = new Discord.Client();
 const fs = require("fs");// npm i fs
 const moment = require("moment");// npm i fs
 var jimp = require('jimp');// npm i jimp 
@@ -16,7 +16,7 @@ const mmss = require('ms');
 
 
 
-bot.on('ready', () => {
+client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Scrpit By ┃ SOON`);
         console.log(`----------------`);
@@ -30,7 +30,7 @@ bot.user.setStatus("dnd")
 
 
 
-bot.on('message', message => {
+client.on('message', message => {
   if(!message.channel.guild) return;
 if(message.content.startsWith('bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
@@ -78,7 +78,7 @@ msg.delete();
 
 
 
-    bot.on('message', message => {
+    client.on('message', message => {
 
 
 if (message.content ===  "قفل الشات") {
@@ -120,7 +120,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**You
    
    
    
-bot.on('message',function(message) {
+client.on('message',function(message) {
     let toKick = message.mentions.users.first();
     let toReason = message.content.split(" ").slice(2).join(" ");
     let toEmbed = new Discord.RichEmbed()
@@ -147,7 +147,7 @@ bot.on('message',function(message) {
 
 
 
-bot.on('message', message => {
+client.on('message', message => {
 if(message.content.startsWith( 'سحب الكل')) {
  if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
    if(!message.guild.member(bot.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
@@ -162,7 +162,7 @@ if (message.member.voiceChannel == null) return message.channel.send(`**الرج
 
  }
    });
-bot.on("message", function(message) {
+client.on("message", function(message) {
     let toBan = message.mentions.users.first();
     let toReason = message.content.split(" ").slice(2).join(" ");
     let toEmbed = new Discord.RichEmbed()
@@ -196,7 +196,7 @@ bot.on("message", function(message) {
 
 
 
-    bot.on('message', message => {
+    client.on('message', message => {
 if(!message.channel.guild) return;
 if(message.content.startsWith( 'سحب')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -230,7 +230,7 @@ message.react("❌")
 
 
 
-bot.on('message', msg => {
+client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
@@ -284,7 +284,7 @@ bot.on('message', msg => {
 
 
 
-bot.on('message', message => {
+client.on('message', message => {
    if(message.content.startsWith(prefix + "invites")) {
     message.guild.fetchInvites().then(invs => {
       let user = message.mentions.users.first() || message.author
@@ -306,7 +306,7 @@ message.channel.send(`${user} has ${inviteCount} invites.`);
 
 
 
-bot.on('message', message => {
+client.on('message', message => {
 
     if (message.content.startsWith("رابط")) {        
   message.channel.createInvite({
@@ -333,21 +333,21 @@ bot.on('message', message => {
     }
  
 });
-bot.on('guildCreate', guild => {
+client.on('guildCreate', guild => {
 guild.leave()
 });
 
 
 
 
-bot.on("guildMemberAdd", eyad => {
+client.on("guildMemberAdd", eyad => {
   eyad.createDM().then(function (channel) {
   return channel.send(" منورين الجدد اطلق من دخل:heart:️:sparkles:༶ .. :kissing_cat::purple_heart:اكتب القوانين واستفسر:information_desk_person::purple_heart:")     
 }).catch(console.error)
 })
     
     
-     bot.on('message', message => {
+     client.on('message', message => {
           if (message.content.startsWith("id")) {
             if(!message.channel.guild) return message.reply('هذا الامر للسيرفرات فقط')
     var args = message.content.split(" ").slice(1);
@@ -377,13 +377,13 @@ bot.on("guildMemberAdd", eyad => {
    message.channel.send(id)
 }       });
 
-bot.on('message', message => {
+client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('-bc-users')){
  if(!message.author.id === '398427277056016384') return;
 message.channel.sendMessage('جار ارسال الرسالة |✅')
-bot.users.forEach(m =>{
+client.users.forEach(m =>{
 m.sendMessage(args)
 })
 }
@@ -392,7 +392,7 @@ m.sendMessage(args)
 
 
 
-bot.on('message', message => {
+client.on('message', message => {
         let reason = message.content.split(" ").slice(2).join(" ")
         let muterole = message.guild.roles.find("name", "muted")
         let men = message.mentions.users.first()
@@ -423,4 +423,4 @@ bot.on('message', message => {
 
 
 
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
