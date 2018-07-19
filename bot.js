@@ -24,6 +24,7 @@ const sql = require("sqlite");
  const pretty = require('pretty-ms') 
 ,ti={}  
 ,spee={};
+            var prefix = "-";
 
 
 
@@ -2219,7 +2220,6 @@ client.on("message", (message) => {
 const sWlc = {}
 const premium = ['340568730037911554', '', '', '']
 client.on('message', message => {
-var prefix = "#";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
