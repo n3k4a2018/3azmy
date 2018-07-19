@@ -728,7 +728,7 @@ const zead = [
    '*** مريم : ماذا تريد ان تسمع ***',
    '*** احد ما خرج من المنزل ***',
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
-];
+]
  client.on('message', message => {
  if (message.content.startsWith('-مريم')) {
   var mariam= new Discord.RichEmbed()
