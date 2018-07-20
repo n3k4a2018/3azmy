@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
+const canvas = require('canvas');
+
 const client = new Discord.Client();   
 const googl = require('goo.gl');  
 const translate = require('google-translate-api');   
