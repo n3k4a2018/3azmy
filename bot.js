@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
-const canvas = require('canvas');
+const Canvas = require('canvas');
 
 const client = new Discord.Client();   
 const googl = require('goo.gl');  
