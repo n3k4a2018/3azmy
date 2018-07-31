@@ -1,3 +1,4 @@
+
 {
   "name": "Test",
   "description": "Test",
@@ -8,8 +9,7 @@
   },
   "dependencies": {
    "discord.js": "^11.3.2",
-    "canvas": "^1.6.10",
-
+"canvas": "^1.6.10",
     "discord.js-musicbot-addon": "^1.10.3",
     "express": "^4.16.3",
     "finalhandler": "^1.1.1",
@@ -44,6 +44,7 @@
     "ytdl-core": "^0.20.2",
      "ffmpeg": "0.0.4",
     "pretty-ms": "3.1.0", 
+        "ffmpeg-binaries": "3.1.0", 
     "ffmpeg-binaries": "^3.2.2-3",
     "simple-youtube-api": "^5.0.2"
   }
